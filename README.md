@@ -55,8 +55,23 @@ jobs:
           files: ${{ steps.modified-migrations.outputs.file_names }}
 ```
 
+## input parameters
+
+| Name                    | Description                                             | Default               |
+|-------------------------|---------------------------------------------------------|-----------------------|
+| `access_token`          | Your GitHub Access Token                                | `${{ github.token }}` |
+| `assume-in-transaction` | Assume in transaction                                   | `false`               |
+| `config`                | Path to a custom config file                            | `""`                  |
+| `exclude`               | Rules to exclude, as a comma-separated string           | —                     |
+| `files`                 | Space separated list of file paths to check.            | `""`                  |
+| `fail-on-violations`    | Fail on violations                                      | `false`               |
+| `pattern`               | Glob pattern of files to match (e.g., `./migrations/*`) | `""`                  |
+| `pg-version`            | PostgreSQL version                                      | —                     |
+| `verbose`               | Verbose output                                          | `true`                |
+| `version`               | Squawk NPM version to install                           | `latest`              |
+
 > [!TIP]
-> See `action.yml` for more action inputs.
+> See `action.yml` for more details.
 
 ## example report
 
